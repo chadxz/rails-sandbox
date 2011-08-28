@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  before_filter :authenticate
+class UsersController < ApplicationController 
   
   # GET /users
   # GET /users.xml

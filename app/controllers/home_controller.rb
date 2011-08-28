@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  def dashboard
-    authenticate
+  def dashboard    
     respond_to do |format|
       format.html { render 'dashboard' }
       format.xml  { }
