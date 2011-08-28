@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_filter :authenticate, :only => :dashboard
+  
   def dashboard    
     respond_to do |format|
       format.html { render 'dashboard' }
