@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :except => :new
+  before_filter :authenticate, :except => [:new,:create]
   
   # GET /users
   # GET /users.xml
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
       
     respond_to do |format|
       if !invalid_code && @user.save
-        format.html { redirect_to @user, :notice => 'User was successfully created.' }
+        format.html { render 'sessions/create' }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
