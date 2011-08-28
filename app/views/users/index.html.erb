@@ -1,0 +1,28 @@
+<h1><%= t 'navigation.listing_items', :items => pluralize(@users.count, User.human_name) %></h1>
+
+<table>
+  <tr>
+    <th><%= User.human_attribute_name 'id' %></th>
+    <th><%= User.human_attribute_name 'user_name' %></th>
+    <th><%= User.human_attribute_name 'email' %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.user_name %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to t('navigation.show'), user %></td>
+    <td><%= link_to t('navigation.edit'), edit_user_path(user) %></td>
+    <td><%= link_to t('navigation.destroy'), user, :confirm => t('confirm'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<p><%= link_to t('navigation.new_item', :item => User.human_name), new_user_path %> |
+   <%= link_to t('misc.dashboard'), dashboard_path %></p>

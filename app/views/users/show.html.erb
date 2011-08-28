@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= User.human_attribute_name 'user_name' %>:</b>
+  <%= @user.user_name %>
+</p>
+
+<p>
+  <b><%= User.human_attribute_name 'email' %>:</b>
+  <%= @user.email %>
+</p>
+
+<%= link_to t('navigation.edit'), edit_user_path(@user) %> |
+<%= link_to t('navigation.back'), users_path %>

@@ -1,0 +1,7 @@
+<p>
+<% if current_user %>
+  Hey there <%= current_user.user_name %>.  Wanna check out the <%= link_to t('navigation.dashboard'), dashboard_path %>? If not, all that's really left to do is <%= link_to t('navigation.logout'), logout_path %>!
+<% else %>
+  Hello friend!  You look like an adventurous soul, would you like to <%= link_to "Log in", login_path %> or <%= link_to "Sign Up", signup_path %>?
+<% end %>
+</p>
